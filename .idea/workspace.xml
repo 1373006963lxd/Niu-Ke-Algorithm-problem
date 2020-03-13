@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d6a678c1-3ff9-41b2-8492-2206c1854a4f" name="Default Changelist" comment="" />
+    <list default="true" id="d6a678c1-3ff9-41b2-8492-2206c1854a4f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lxd/niukework/BinaryTree/Mirror.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,11 +43,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/Link/Merge.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1092">
               <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/BinaryTree/Mirror.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="364">
+              <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -68,10 +81,12 @@
       <find>resize</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/lxd/niukework/eBaoTeach/compile/TestInterface.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lxd/niukework/eBaoTeach/compile/Test.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lxd/niukework/Final/Test.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lxd/niukework/Sort/BubbleSort.java" />
@@ -122,6 +137,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/lxd/niukework/StringTest/FirstNotRepeatingChar.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lxd/niukework/Heap/GetLeastNumbers_Solution.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lxd/niukework/Link/Merge.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lxd/niukework/BinaryTree/Mirror.java" />
       </list>
     </option>
   </component>
@@ -138,6 +154,7 @@
     <option name="width" value="1378" />
     <option name="height" value="780" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -184,17 +201,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="niukework" type="462c0819:PsiDirectoryNode" />
-              <item name="Link" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="niuke-work" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NiuKe" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="niukework" type="462c0819:PsiDirectoryNode" />
-              <item name="Link" type="462c0819:PsiDirectoryNode" />
-              <item name="printListFromTailToHead.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+              <item name="BinaryTree" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="niuke-work" type="b2602c69:ProjectViewProjectNode" />
@@ -213,6 +220,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="G:/Spring Boot/论坛项目/community-master/community-master" />
@@ -362,18 +370,18 @@
       <workItem from="1582028846475" duration="611000" />
       <workItem from="1583242017428" duration="11055000" />
       <workItem from="1583317996288" duration="3760000" />
-      <workItem from="1584091276691" duration="7038000" />
+      <workItem from="1584091276691" duration="7448000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136999000" />
+    <option name="totallyTimeSpent" value="137409000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1374" height="732" extended-state="7" />
+    <frame x="-4" y="-4" width="1374" height="732" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49689442" visible="true" weight="0.2549168" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49689442" visible="true" weight="0.2549168" />
       <window_info id="Structure" order="1" sideWeight="0.5031056" side_tool="true" weight="0.24357034" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -459,17 +467,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/InterfaceTest/InterfaceImp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="14" column="47" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
-          <folding>
-            <element signature="e#132#133#0" expanded="true" />
-            <element signature="e#202#203#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/InterfaceTest/InterfaceTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
@@ -865,6 +862,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1092">
           <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/BinaryTree/Mirror.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
         </state>
       </provider>
     </entry>
