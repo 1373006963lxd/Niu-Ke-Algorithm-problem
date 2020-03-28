@@ -2,7 +2,7 @@ package com.lxd.niukework.Thread;
 
 import java.util.concurrent.TimeUnit;
 
-class print2{
+class prin{
     private int number = 0;
     public synchronized  void print() throws InterruptedException {
         this.notify();
@@ -31,20 +31,5 @@ class print2{
             System.out.println(Thread.currentThread().getName()+"打印"+number);
         }
         this.wait();
-    }
-}
-public class Demo10 {
-    public static void main(String[] args) {
-        print2 p = new print2();
-        new Thread(() -> {
-            for (int i = 0; i < 30; i++) {
-                try {
-                    p.print();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        }, "i").start();
-
     }
 }
