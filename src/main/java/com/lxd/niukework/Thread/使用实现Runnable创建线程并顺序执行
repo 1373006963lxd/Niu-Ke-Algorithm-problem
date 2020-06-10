@@ -1,0 +1,42 @@
+package com.xiaojukeji.business.ai.platform.controller;
+
+/**
+ * @desc
+ * @date 2020/6/10 上午10:18
+ */
+class Print implements  Runnable{
+    //构造函数创建线程
+    private int i;
+    Print(int n){
+        this.i = n;
+    }
+
+
+    @Override
+    public void run() {
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("线程"+i+"打印"+i);
+    }
+}
+public class test {
+    public static void main(String[] args) {
+        //按顺序小循环10个线程
+        for(int j=0;j<10;j++) {
+            //10个线程
+            for (int i = 0; i <= 10; i++) {
+                Print p = new Print(i);
+                Thread thread = new Thread(p);
+                thread.start();
+                try {
+                    thread.join();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+}
