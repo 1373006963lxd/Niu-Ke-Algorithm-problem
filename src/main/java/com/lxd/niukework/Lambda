@@ -1,0 +1,96 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
+/**
+ * @desc
+ * @date 2020/6/16 下午9:51
+ */
+class Person{
+    String name;
+    Integer age;
+    Person(String name,Integer age){
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
+}
+
+public class Lambda {
+    public static void main(String[] args) {
+        List<Person> list = new ArrayList<>();
+        list.add(new Person("lxd",25));
+        list.add(new Person("lxd",26));
+        list.add(new Person("lk",27));
+        list.add(new Person("xjy",23));
+        list.add(new Person("tjx",22));
+        System.out.println(list.stream().map(Person::getAge).collect(Collectors.toList()));//[25, 26, 27, 23, 22]
+        System.out.println(list.stream().sorted((a,b)->a.getAge().compareTo(b.getAge())).collect(Collectors.toList()));
+        System.out.println(list.stream().filter(p->p.getAge()>25).collect(Collectors.toList()));
+        System.out.println(list.stream().filter(p->p.getName().contains("l")).collect(Collectors.toList()));
+        System.out.println(list.stream().max((a,b)->a.getAge().compareTo(b.getAge())).get().getName());
+        System.out.println(list.stream().min((a,b)->a.getAge().compareTo(b.getAge())).get().getName());
+        System.out.println(list.stream().sorted((a,b)->a.getAge().compareTo(b.getAge())).limit(3).collect(Collectors.toList()));
+        System.out.println(list.stream().collect(Collectors.groupingBy(p->p.getName())));//Map<name, List<Person>>
+        System.out.println(list.stream().toArray());
+        System.out.println(list.stream().map(p->p.getName()).distinct().collect(Collectors.toList()));
+        System.out.println(list.stream().collect(Collectors.groupingBy(p->p.getName(),Collectors.averagingInt(p->p.getAge()))));
+        System.out.println(list.stream().collect(Collectors.groupingBy(Person::getName,Collectors.summarizingInt(p->p.getAge()))));
+        System.out.println("==================================================");
+        ArrayList<Integer> arrayList = new ArrayList<Integer>();
+        arrayList.add(-1);
+        arrayList.add(3);
+        arrayList.add(3);
+        arrayList.add(-5);
+        arrayList.add(7);
+        arrayList.add(4);
+        arrayList.add(-9);
+        arrayList.add(-7);
+        System.out.println("原始数组:");
+        System.out.println(arrayList);
+        // void reverse(List list)：反转
+        Collections.reverse(arrayList);
+        System.out.println("Collections.reverse(arrayList):");
+        System.out.println(arrayList);
+
+        // void sort(List list),按自然排序的升序排序
+        Collections.sort(arrayList);
+        System.out.println("Collections.sort(arrayList):");
+        System.out.println(arrayList);
+        // 定制排序的用法
+        Collections.sort(arrayList, new Comparator<Integer>() {
+
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o2.compareTo(o1);
+            }
+        });
+        System.out.println("定制排序后：");
+        System.out.println(arrayList);
+    }
+}
