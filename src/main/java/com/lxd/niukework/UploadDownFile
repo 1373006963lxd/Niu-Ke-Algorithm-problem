@@ -1,0 +1,243 @@
+========================================================================controller===============================================
+@PostMapping("/company/upload")
+    public String upload(@RequestParam("file") MultipartFile multipartFile) throws Exception{
+        if(multipartFile==null||multipartFile.getOriginalFilename().matches("^.+\\.(?i)(jpg)")){
+            throw new Exception("文件不存在|不匹配");
+        }
+        String resStr="";
+        File file = null;
+        file = File.createTempFile("temp", ".jpg");
+        multipartFile.transferTo(file);
+        MultipartEntityBuilder multipartEntityBuilder = MultipartEntityBuilder.create();
+        multipartEntityBuilder.addBinaryBody("filecontent",file);
+        multipartEntityBuilder.setContentType(ContentType.MULTIPART_FORM_DATA);
+
+        HttpClient client = HttpClients.createDefault();
+        HttpPost post = new HttpPost("这里是上传的uri");
+        post.setEntity(multipartEntityBuilder.build());
+        HttpResponse response = client.execute(post);
+        int statusCode = response.getStatusLine().getStatusCode();
+        if(statusCode== HttpStatus.OK.value() || statusCode == HttpStatus.BAD_REQUEST.value()){
+            if(response.getEntity()!=null){
+                resStr = EntityUtils.toString(response.getEntity());
+                System.out.println(resStr);
+            }else{
+                log.warn("resut status is:"+statusCode);
+            }
+        }else{
+            log.warn("upload file error"+statusCode);
+        }
+        return resStr;
+    }
+
+
+@PostMapping("/upload/single")
+    public String uploadSingle(@RequestParam("file") MultipartFile multipartFile, HttpServletRequest request){
+        return FileUpUtil.upfile(multipartFile, request);
+    }
+
+    @GetMapping("/downFile")
+    public void  downFile(HttpServletRequest request, HttpServletResponse response,@RequestParam("filename") String filename){
+        FileUpUtil.downFile(request,response,filename);
+    }
+
+    @PostMapping("/upload/multi")
+    public List<String> uploadMulti(@RequestParam("file") MultipartFile[] multipartFile, HttpServletRequest request){
+        return FileUpUtil.upfiles(multipartFile, request);
+    }
+    
+    =================================================================service-==================================================
+    package life.lxd.community.utils;
+
+import org.springframework.util.ClassUtils;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
+/**
+ * @auther li xiao dong
+ * @date 2020/6/20 0020 下午 13:40
+ */
+public class FileUpUtil {
+    /**
+     * 上传多个文件或图片上传在项目路径下的img文件夹在
+     * ！！！！！！重新部署项目实效,因为文件夹被删除
+     * 1.上传文件（图片）就是MultipartFile接收文件
+     * 2.确定将文件（图片）上传到指定的位置（项目static目录、公司url）--针对中文目录需要编码utf-8
+     *  2.1根据路径创建file判断是否有这个目录，如果没有则创建，有则继续。
+     * 3.针对上传来说就是将图片写入到自己指定位置。--上传图片（inputStream）、写入指定位置（outputStream）
+     * 4.开始读取
+     *                     int b = 0;
+     *                     while ((b = in.read()) != -1) {
+     *                         fos.write(b);
+     *                     }
+     * @param files
+     * @param request
+     * @return
+     */
+    public static List<String> upfiles(MultipartFile files[], HttpServletRequest request) {
+        List<String> list = new ArrayList<String>();
+        // 获得项目的路径
+        String sc = null;
+        try {
+            sc = java.net.URLDecoder.decode(ClassUtils.getDefaultClassLoader().getResource("").getPath(),"utf-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        // 上传位置
+        String path = sc+"static/img/uploadImg/"; // 设定文件保存的目录
+        File f = new File(path);
+        if (!f.exists()) {
+            f.mkdirs();
+        }
+
+        for (int i = 0; i < files.length; i++) {
+            // 获得原始文件名
+            String fileName = files[i].getOriginalFilename();
+            System.out.println("原始文件名:" + fileName);
+            // 新文件名
+            String newFileName = UUID.randomUUID() + fileName;
+            if (!files[i].isEmpty()) {
+                try {
+                    FileOutputStream fos = new FileOutputStream(path
+                            + newFileName);
+                    InputStream in = files[i].getInputStream();
+                    int b = 0;
+                    while ((b = in.read()) != -1) {
+                        fos.write(b);
+                    }
+                    fos.close();
+                    in.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            System.out.println("上传图片到:" + path + newFileName);
+            list.add("img/" + newFileName);
+        }
+        return list;
+    }
+
+    /**
+     * 上传一个文件或图片
+     * 上传多个文件或图片上传在项目路径下的img文件夹在
+     * ！！！！！！重新部署项目实效,因为文件夹被删除
+     *
+     * @param file
+     * @param request
+     * @return
+     */
+    public static String upfile(MultipartFile file, HttpServletRequest request) {
+        /*// 获得项目的路径
+        ServletContext sc = request.getSession().getServletContext();
+        // 上传位置
+        String path = sc.getRealPath("/img") + File.separatorChar; // 设定文件保存的目录
+        */
+        // 获得项目的路径
+        String sc = null;
+        try {
+            sc = java.net.URLDecoder.decode(ClassUtils.getDefaultClassLoader().getResource("").getPath(),"utf-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        // 上传位置
+        String path = sc+"static/img/uploadImg/"; // 设定文件保存的目录
+        File f = new File(path);
+        if (!f.exists()) {
+            f.mkdirs();
+        }
+        // 获得原始文件名
+        String fileName = file.getOriginalFilename();
+        System.out.println("原始文件名:" + fileName);
+        // 新文件名
+        String newFileName = UUID.randomUUID() + fileName;
+        if (!file.isEmpty()) {
+            try {
+                FileOutputStream fos = new FileOutputStream(path
+                        + newFileName);
+                InputStream in = file.getInputStream();
+                int b = 0;
+                while ((b = in.read()) != -1) {
+                    fos.write(b);
+                }
+                fos.close();
+                in.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("上传图片到:" + path + newFileName);
+        return "img/" + newFileName;
+    }
+
+
+    /**
+     * 下载
+     * 1. 根据文件（图片）唯一标识找到下载的路径（自己上传的路径、公司下载图片或文件的url）
+     * 2. 针对下载就是下载的位置为inputStream、
+     *    2.1针对下载响应头进行设置最为关键
+     *    2.2response.getOutpuStream
+     * 3. 读取资源到自己目标位置。
+     * @param request
+     * @param response
+     * @param filename
+     * @return
+     */
+    public static void downFile(HttpServletRequest request,
+                                HttpServletResponse response, String filename) {
+        // 得到要下载的文件名
+//        String fileName = filename.substring(4);
+        String fileName = filename;
+        try {
+            fileName = new String(fileName.getBytes("iso8859-1"), "UTF-8");
+            // 获取上传文件的目录
+            String sc = java.net.URLDecoder.decode(ClassUtils.getDefaultClassLoader().getResource("").getPath(),"utf-8");
+            // 上传位置
+            String fileSaveRootPath = sc+"static/img/uploadImg/";
+
+            System.out.println(fileSaveRootPath  + fileName);
+            // 得到要下载的文件
+            File file = new File(fileSaveRootPath  + fileName);
+
+            // 如果文件不存在
+            if (!file.exists()) {
+                request.setAttribute("message", "您要下载的资源已被删除！！");
+                System.out.println("您要下载的资源已被删除！！");
+                return;
+            }
+            // 处理文件名
+            String realname = fileName.substring(fileName.lastIndexOf("-") + 1);
+            // 设置响应头，控制浏览器下载该文件
+            /*response.setHeader("content-disposition", "attachment;filename="
+                    + URLEncoder.encode(realname, "UTF-8"));*/
+//            response.setContentType("application/octet-stream");
+            response.setHeader("Cache-Control", "No-Cache");
+            response.setDateHeader("Expires",0);
+            response.setHeader("Content-disposition",new String(("attachment;filename="+realname)
+                    .getBytes(StandardCharsets.UTF_8),StandardCharsets.ISO_8859_1));
+            // 读取要下载的文件，保存到文件输入流
+            FileInputStream in = new FileInputStream(fileSaveRootPath + fileName);
+            // 创建输出流
+            OutputStream out = response.getOutputStream();
+            // 创建缓冲区
+            byte buffer[] = new byte[1024];
+            int len = 0;
+            // 循环将输入流中的内容读取到缓冲区当中
+            while ((len = in.read(buffer)) > 0) {
+                // 输出缓冲区的内容到浏览器，实现文件下载
+                out.write(buffer, 0, len);
+            }
+            // 关闭文件输入流
+            in.close();
+            // 关闭输出流
+            out.close();
+        } catch (Exception e) {
+        }
+    }
+}
