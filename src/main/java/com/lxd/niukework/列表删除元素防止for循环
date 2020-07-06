@@ -1,0 +1,47 @@
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
+import java.util.Map.Entry;
+
+/**
+ * @desc
+ * @date 2020/7/6 上午9:59
+ */
+
+public class ThreadPoll {
+
+    public static void main(String[] args) {
+        List<String> words = new ArrayList<>();
+        words.add("lxd");
+        words.add("lcs");
+        words.add("lk");
+        words.add("lu");
+        System.out.println(words);
+//        words.remove("lxd");
+        //安全删除
+        words.removeIf(word->word.equals("lxd"));
+        words.forEach(System.out::println);
+        //底层是迭代器，modcount每进行一次列表操作就➕1
+        //expectedModCount为之前添加元素值个数3
+        /*在使用Iterator的时候，迭代器会新建一个线程，把原来的线程中的对象重新拷贝一份，在进行删除，修改等操作时，原来的线程只负责迭代，
+        而Iterator负责迭代和删除操作，Iterator每次迭代都会检查迭代器里的对象和原线程中的对象个数是否一致，不一致则抛出：ConcurrentModificationException。
+        * */
+        /*for(String word:words){
+            if("lcs".equals(word)){
+            //这是集合中的remove方法
+                words.remove(word);
+            }
+        }*/
+        Iterator it = words.iterator();
+        while(it.hasNext()){
+            Object value = it.next();
+            if("lu".equals(value)) {
+                //这是迭代器中的remove方法
+                it.remove();
+            }
+        }
+        System.out.println(words);
+    }
+}
