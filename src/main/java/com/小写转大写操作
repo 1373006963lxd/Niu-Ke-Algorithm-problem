@@ -1,0 +1,32 @@
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+/**
+ * @desc
+ * @date 2020/7/6 上午9:59
+ */
+
+public class ThreadPoll {
+
+    /*65～90号为26个大写英文字母，
+        97～122号为26个小写英文字母，
+    * */
+    public static void main(String[] args) {
+        //小写转大写  api
+        char word = 'a';
+        System.out.println(Character.toUpperCase(word));
+        //小写转大写
+        char upperWord = (char)(word&95);
+        System.out.println(upperWord);
+        //大写转大写
+        char word2 = 'A';
+        char upperWord2 = (char)(word2&95);
+        System.out.println(upperWord2);
+    }
+}
