@@ -1,0 +1,40 @@
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+/**
+ * @desc
+ * @date 2020/7/6 上午9:59
+ */
+
+public class ThreadPoll {
+
+    public static void main(String[] args) {
+        LocalDate curDate = LocalDate.now();
+        //获取一年的天数
+        System.out.println(curDate.lengthOfYear());
+        //获取指定年月份的一个月多少天
+        System.out.println(LocalDate.of(2020,6,2).lengthOfMonth());
+        //获取英文月份
+        System.out.println(curDate.getMonth());
+        //获取阿拉伯数字月份
+        System.out.println(curDate.getMonthValue());
+        //获取当前月份多少天  true为闰年
+        System.out.println(curDate.getMonth().length(true));
+        //获取某月的某天
+        System.out.println(curDate.getDayOfMonth());
+        //获取某年的某天
+        System.out.println(curDate.getDayOfYear());
+        //获取任意年份的
+        LocalDate localDate = LocalDate.parse("2020-02-07",
+                DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        System.out.println(localDate);
+        System.out.println(localDate.getMonthValue());
+        System.out.println(localDate.getMonth().length(localDate.isLeapYear()));
+    }
+}
