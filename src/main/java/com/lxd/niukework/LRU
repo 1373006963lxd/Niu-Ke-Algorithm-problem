@@ -1,0 +1,21 @@
+public class ThreadPoll {
+
+    public static void main(String[] args) {
+        //LRU最近最少使用（缓存实现）
+        LinkedHashMap linkmap = new LinkedHashMap(5,0.5f,true);
+        linkmap.put("lxd","lxd11");
+        linkmap.put("cs","cs22");
+        linkmap.put("lc","lc33");
+        linkmap.put("lu","lu44");
+        linkmap.forEach((k,v)->System.out.println(k+"  "+v));
+        linkmap.get("lxd");
+        System.out.println("===================");
+        linkmap.forEach((k,v)->System.out.println(k+" "+v));
+        System.out.println("===================");
+        linkmap.get("lc");
+        linkmap.forEach((k,v)->System.out.println(k+" "+v));
+        linkmap.put("lg","lg55");
+        System.out.println("===================");
+        linkmap.forEach((k,v)->System.out.println(k+" "+v));
+    }
+}
