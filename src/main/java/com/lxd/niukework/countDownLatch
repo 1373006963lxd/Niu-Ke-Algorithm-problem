@@ -1,0 +1,44 @@
+package com.jd.retail.identity.service;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
+
+/**
+ * @Author lixiaodong
+ * @Date 2021/1/11 21:06
+ **/
+public class test {
+    public static void main(String[] args) throws InterruptedException, ExecutionException {
+        //1. 创建线程池
+        ExecutorService pool = Executors.newFixedThreadPool(5);
+        final int count = 2;
+        CountDownLatch countDownLatch = new CountDownLatch(count);
+        List<Future<Integer>> futures = new ArrayList<>();
+//        AtomicInteger sum = new AtomicInteger();
+        for(int i=0;i<count;i++) {
+            int finalI = i;
+            Future future = pool.submit(() -> {
+                        try {
+                            System.out.println(Thread.currentThread().getName() + "开始执行");
+                            Thread.sleep(2000);
+//                            sum.addAndGet(1);
+                            System.out.println(Thread.currentThread().getName() + "执行结束");
+                            countDownLatch.countDown();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                       return finalI;
+                   }
+            );
+            futures.add(future);
+        }
+        System.out.println("主线程"+"start");
+        countDownLatch.await();
+        for(Future<Integer> n:futures){
+            System.out.println(n.get());
+        }
+        System.out.println("主线程"+"end");
+    }
+}
