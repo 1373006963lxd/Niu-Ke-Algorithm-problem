@@ -1,0 +1,168 @@
+package com.jd.retail.identity.service;
+
+import lombok.extern.slf4j.Slf4j;
+
+import java.text.SimpleDateFormat;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
+
+/**
+ * @Author lixiaodong
+ * @Date 2021/1/11 21:06
+ **/
+@Slf4j
+public class test {
+   /* public static void main(String[] args) {
+        ExecutorService pool = Executors.newCachedThreadPool();
+        int size = 3;
+        CyclicBarrier cyclicBarrier = new CyclicBarrier(size, () -> {
+            System.out.println(size + "位运动员都准备好了，可以起跑！");
+            pool.shutdownNow();
+        });
+
+        for (int i = 1; i <=size; i++) {
+            int index = i;
+            pool.submit(() -> {
+                System.out.println("第" + index + "位运动员准备好了");
+                try {
+                    cyclicBarrier.await();
+                    System.out.println("第" + index + "位运动员结束");
+                } catch (InterruptedException | BrokenBarrierException e) {
+                    e.printStackTrace();
+                }
+            });
+        }
+        System.out.println(Thread.currentThread().getName());
+    }*/
+   /*public static void main(String[] args) throws InterruptedException, ExecutionException {
+       ExecutorService executorService = Executors.newFixedThreadPool(3);
+       final  int count = 2;
+       CountDownLatch countDownLatch = new CountDownLatch(count);
+       executorService.submit(()->{
+           System.out.println("第一个任务执行");
+           countDownLatch.countDown();
+       });
+       executorService.submit(()->{
+           System.out.println("第二个任务执行");
+           countDownLatch.countDown();
+       });
+       countDownLatch.await();
+       System.out.println("第一个任务和第二个任务都用到的任务");
+   }*/
+    // 1.uuid
+   /*public static void main(String[] args) {
+       String uuid = UUID.randomUUID().toString().replaceAll("-","");
+       log.info("uuid生成分布式id的形式：uuid={}",uuid);
+       System.out.print(uuid);
+   }*/
+
+    //2.雪花算法
+    /**
+     * 起始的时间戳  13位单位毫秒
+     */
+    private final static long START_STMP = 1480166465631L;
+
+    /**
+     * 每一部分占用的位数
+     */
+    private final static long SEQUENCE_BIT = 12; //序列号占用的位数
+    private final static long MACHINE_BIT = 5;   //机器标识占用的位数
+    private final static long DATACENTER_BIT = 5;//数据中心占用的位数
+
+    /**
+     * 每一部分的最大值
+     */
+    private final static long MAX_DATACENTER_NUM = -1L ^ (-1L << DATACENTER_BIT); //31    11111
+    private final static long MAX_MACHINE_NUM = -1L ^ (-1L << MACHINE_BIT);//31   11111
+    private final static long MAX_SEQUENCE = -1L ^ (-1L << SEQUENCE_BIT);//4095   111111111111
+
+    /**
+     * 每一部分向左的位移
+     */
+    private final static long MACHINE_LEFT = SEQUENCE_BIT;
+    private final static long DATACENTER_LEFT = SEQUENCE_BIT + MACHINE_BIT;
+    private final static long TIMESTMP_LEFT = DATACENTER_LEFT + DATACENTER_BIT;
+
+    private long datacenterId;  //数据中心
+    private long machineId;     //机器标识
+    private long sequence = 0L; //序列号
+    private long lastStmp = -1L;//上一次时间戳
+
+    public test(long datacenterId, long machineId) {
+        if (datacenterId > MAX_DATACENTER_NUM || datacenterId < 0) {
+            throw new IllegalArgumentException("datacenterId can't be greater than MAX_DATACENTER_NUM or less than 0");
+        }
+        if (machineId > MAX_MACHINE_NUM || machineId < 0) {
+            throw new IllegalArgumentException("machineId can't be greater than MAX_MACHINE_NUM or less than 0");
+        }
+        this.datacenterId = datacenterId;
+        this.machineId = machineId;
+    }
+
+    /**
+     * 产生下一个ID
+     *时间戳 |中心标识 |机器标识 |序列号
+     * @return
+     */
+    public synchronized long nextId() {
+        long currStmp = getNewstmp();
+        if (currStmp < lastStmp) {
+            throw new RuntimeException("Clock moved backwards.  Refusing to generate id");
+        }
+
+        if (currStmp == lastStmp) {
+            //相同毫秒内，序列号自增   111111111111 & 1000000000000 =  0   4096   1-4095
+            sequence = (sequence + 1) & MAX_SEQUENCE;
+            //同一毫秒的序列数已经达到最大
+            if (sequence == 0L) {
+                currStmp = getNextMill();
+            }
+        } else {
+            //不同毫秒内，序列号置为0
+            sequence = 0L;
+        }
+
+        lastStmp = currStmp;
+        long temp = datacenterId << DATACENTER_LEFT;
+        long temp1 = machineId << MACHINE_LEFT;
+        long temp2 = (currStmp - START_STMP) << TIMESTMP_LEFT;
+        //或运算                                                               10111011011111010010101100001000001101000  41
+        return (currStmp - START_STMP) << TIMESTMP_LEFT //时间戳部分           11110010110011100110111110100011010000000000000000000000000  59
+                | datacenterId << DATACENTER_LEFT       //数据中心部分 262144                                          1000000000000000000
+                | machineId << MACHINE_LEFT             //机器标识部分  12288                                          11000000000000
+                | sequence;                             //序列号部分  12位
+    }
+
+    private long getNextMill() {
+        long mill = getNewstmp();
+        while (mill <= lastStmp) {
+            mill = getNewstmp();
+        }
+        return mill;
+    }
+
+    private long getNewstmp() {
+        return System.currentTimeMillis();
+    }
+
+    public static void main(String[] args) {
+        test test = new test(2, 3);
+        long temp = System.currentTimeMillis();
+        HashMap<Long,Long>  map = new HashMap<>();
+        for (Long i = 0L; i < 10000000l; i++) {
+            String nextId = String.valueOf(test.nextId());
+            String tempNextId = nextId.substring(9);
+            long result = Long.parseLong(tempNextId);
+            if(map.containsKey(result)){
+                System.out.println(result+"=========="+"已经存在");
+                return;
+            }else {
+                map.put(result, i);
+            }
+           System.out.println(result+"=========="+i);
+        }
+        System.out.println(map.size());
+
+    }
+}
