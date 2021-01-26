@@ -1,0 +1,15 @@
+public static void main(String[] args) throws Exception {
+        /*Long orderId=147352L;
+        String pin="bafsdfasdfasdfasdfbf";
+        StringBuilder builder = new StringBuilder();
+        builder.append(orderId.longValue());
+        builder.append(calculationSplitId(pin));
+
+        System.out.println(calculationSplitId(pin));
+        System.out.println(builder.toString());*/
+        Tenant tenant = new Tenant();
+        Class tenantClass = tenant.getClass();
+        Method setName = tenantClass.getMethod("setName", String.class);
+        Object invoke = setName.invoke(tenant, "lxd");
+        System.out.println(tenant.getName());
+    }
