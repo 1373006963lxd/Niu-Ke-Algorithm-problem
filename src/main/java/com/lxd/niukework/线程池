@@ -1,0 +1,43 @@
+public class test {
+    private static ThreadFactory threadFactory = new ThreadFactoryBuilder().setNameFormat("test").build();
+    private static AtomicInteger temp = new AtomicInteger(0);
+    public static void main(String[] args) throws InterruptedException {
+        ExecutorService executorService = new ThreadPoolExecutor(40,100,
+                5, TimeUnit.SECONDS, new LinkedBlockingDeque<>(),threadFactory, new ThreadPoolExecutor.AbortPolicy());
+        SimpleDateFormat simpleFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        System.out.println(simpleFormatter.format(new Date())+"start");
+        for(int i=0;i<100;i++){
+            executorService.execute(()->{
+                System.out.println(Thread.currentThread().getName()+"111111正在处理");
+                try {
+                    temp.getAndAdd(1);
+                    Thread.sleep(300);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println(Thread.currentThread().getName()+"111111处理结束");
+            });
+            executorService.execute(()->{
+                System.out.println(Thread.currentThread().getName()+"222222正在处理");
+                try {
+                    temp.getAndAdd(1);
+                    Thread.sleep(300);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println(Thread.currentThread().getName()+"222222处理结束");
+
+            });
+        }
+        //executorService.awaitTermination(2,TimeUnit.SECONDS);
+        System.out.println(simpleFormatter.format(new Date())+"end========="+"i===="+temp);
+        executorService.shutdown();
+    }
+    class absortPolicy implements RejectedExecutionHandler{
+
+        @Override
+        public void rejectedExecution(Runnable r, ThreadPoolExecutor executor) {
+            executor.submit(r);
+        }
+    }
+}
