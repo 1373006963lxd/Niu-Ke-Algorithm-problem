@@ -1,0 +1,79 @@
+package com.jd.retail.identity.service;
+
+
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
+
+@Slf4j
+public class test {
+    private static ThreadFactory threadFactory = new ThreadFactoryBuilder().setNameFormat("test").build();
+    private static AtomicInteger temp = new AtomicInteger(0);
+//    private static final Logger logger = LoggerFactory.getLogger(test.class);
+    public static void main(String[] args) throws InterruptedException {
+        ExecutorService executorService = new ThreadPoolExecutor(40,100,
+                5, TimeUnit.SECONDS, new LinkedBlockingDeque<>(),threadFactory, new ThreadPoolExecutor.AbortPolicy());
+        SimpleDateFormat simpleFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date start = new Date();
+        System.out.println(simpleFormatter.format(start)+"start");
+        ArrayList<Integer> arrayList1 = new ArrayList<>();
+        ArrayList<Integer> arrayList2 = new ArrayList<>();
+        ArrayList<Integer> all = new ArrayList<>();
+        for(int i=0;i<100;i++){
+            executorService.execute(()->{
+                System.out.println(Thread.currentThread().getName()+"111111正在处理");
+                try {
+                    temp.getAndAdd(1);
+                    arrayList1.add(temp.get());
+                    Thread.sleep(300);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println(Thread.currentThread().getName()+"111111处理结束");
+            });
+            executorService.execute(()->{
+                System.out.println(Thread.currentThread().getName()+"222222正在处理");
+                try {
+                    temp.getAndAdd(1);
+                    arrayList2.add(temp.get());
+                    Thread.sleep(300);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println(Thread.currentThread().getName()+"222222处理结束");
+
+            });
+        }
+        executorService.awaitTermination(2,TimeUnit.SECONDS);
+        Date end = new Date();
+        System.out.println(simpleFormatter.format(end)+"end========="+"i===="+temp);
+        System.out.println((end.getTime()- start.getTime())/1000);
+        all.addAll(arrayList1);
+        all.addAll(arrayList2);
+        all.stream().forEach(item->System.out.print(item+"   "));
+        System.out.println();
+        executorService.shutdown();
+        try {
+            executorService.submit(() -> {
+                System.out.println("进来了=============================");
+            });
+        }catch (Exception e){
+            log.info("异常信息============{}"+e);
+            System.out.println("线程池已经关闭不能再添加任务");
+        }
+    }
+    class absortPolicy implements RejectedExecutionHandler{
+
+        @Override
+        public void rejectedExecution(Runnable r, ThreadPoolExecutor executor) {
+            executor.submit(r);
+        }
+    }
+}
