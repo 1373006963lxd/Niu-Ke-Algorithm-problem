@@ -1,4 +1,7 @@
 package com.lxd.niukework.Sort;
+
+import java.util.Arrays;
+
 /*
 *
 * 快速排序
@@ -34,7 +37,9 @@ public class quickSort {
         sort(array,i+1,high);
     }
 
-    public static void quicjSort(int array[]){
-        sort(array,0,array.length-1);
+    public static void main(String args[]){
+        int []arr={12,20,5,16,15,1,2,100,30,45,23,9};
+        sort(arr,0,arr.length-1);
+        System.out.println(Arrays.toString(arr));
     }
 }
