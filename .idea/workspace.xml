@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d6a678c1-3ff9-41b2-8492-2206c1854a4f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lxd/niukework/Sort/BinarySerch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lxd/niukework/Sort/BubbleSortDiGui.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lxd/niukework/Sort/BubbleSortNew.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lxd/niukework/Sort/MergeSort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lxd/niukework/Sort/SelectSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lxd/niukework/MultiState/Figure.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lxd/niukework/MultiState/Rectangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lxd/niukework/MultiState/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lxd/niukework/MultiState/Triangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lxd/niukework/PriorityQueue/PriorityQueueTopK.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lxd/niukework/Sort/BinarySerch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lxd/niukework/Sort/BinarySerch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lxd/niukework/Sort/BinarySerch.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lxd/niukework/Sort/BinarySerch.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -43,82 +45,45 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/Transactional/TransactionalProduct.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/MultiState/Figure.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+            <state relative-caret-position="200">
+              <caret line="8" column="23" lean-forward="true" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/Sort/quickSort.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/MultiState/Rectangle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="657">
-              <caret line="42" column="47" selection-start-line="42" selection-start-column="47" selection-end-line="42" selection-end-column="47" />
+            <state relative-caret-position="200">
+              <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+              <folding>
+                <element signature="e#115#116#0" expanded="true" />
+                <element signature="e#144#145#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/Sort/QuickSortNew.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/MultiState/Triangle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/Sort/BubbleSort.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="77">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/Sort/BubbleSortNew.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="8" column="49" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/Sort/BubbleSortDiGui.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="12" column="49" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/Sort/SelectSort.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/Sort/MergeSort.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="70" column="33" lean-forward="true" selection-start-line="70" selection-start-column="33" selection-end-line="70" selection-end-column="33" />
+            <state relative-caret-position="250">
+              <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+              <folding>
+                <element signature="e#113#114#0" expanded="true" />
+                <element signature="e#142#143#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/Sort/BinarySerch.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/MultiState/Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+            <state relative-caret-position="175">
+              <caret line="7" column="62" lean-forward="true" selection-start-line="7" selection-start-column="62" selection-end-line="7" selection-end-column="62" />
             </state>
           </provider>
         </entry>
@@ -152,12 +117,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/lxd/niukework/HashTable/TestHashTable.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lxd/niukework/AaLi/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lxd/niukework/BinaryTree/preorderTraversal.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lxd/niukework/BinaryTree/postorderTraversal.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lxd/niukework/BinaryTree/inorderTraversal.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lxd/niukework/BinaryTree/IsBalanced_Solution.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lxd/niukework/StringTest/FirstNotRepeatingChar.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lxd/niukework/Heap/GetLeastNumbers_Solution.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lxd/niukework/Link/Merge.java" />
@@ -197,12 +156,18 @@
         <option value="$PROJECT_DIR$/src/main/java/com/lxd/niukework/ThreadPrint/ThreadOrderPrintCountDown.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lxd/niukework/Transactional/TransactionalProduct.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lxd/niukework/Sort/QuickSortNew.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lxd/niukework/Sort/quickSort.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lxd/niukework/Sort/BubbleSortDiGui.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lxd/niukework/Sort/BubbleSortNew.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lxd/niukework/Sort/SelectSort.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lxd/niukework/Sort/MergeSort.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lxd/niukework/Sort/quickSort.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lxd/niukework/Sort/BinarySerch.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lxd/niukework/PriorityQueue/PriorityQueue.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lxd/niukework/PriorityQueue/PriorityQueueTopK.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lxd/niukework/MultiState/Figure.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lxd/niukework/MultiState/Rectangle.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lxd/niukework/MultiState/Triangle.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lxd/niukework/MultiState/Test.java" />
       </list>
     </option>
   </component>
@@ -219,7 +184,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-4" />
     <option name="y" value="-4" />
     <option name="width" value="1374" />
@@ -276,6 +241,27 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="niukework" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="niuke-work" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Niu-Ke-Algorithm-problem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="niukework" type="462c0819:PsiDirectoryNode" />
+              <item name="MultiState" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="niuke-work" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Niu-Ke-Algorithm-problem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="niukework" type="462c0819:PsiDirectoryNode" />
+              <item name="MultiState" type="462c0819:PsiDirectoryNode" />
+              <item name="Test" type="1a9f42e2:ClassTreeNode" />
             </path>
             <path>
               <item name="niuke-work" type="b2602c69:ProjectViewProjectNode" />
@@ -356,22 +342,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.BinarySerch">
+  <component name="RunManager" selected="Application.Test">
     <configuration name="BinarySerch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.lxd.niukework.Sort.BinarySerch" />
-      <module name="NiuKe" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.lxd.niukework.Sort.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BubbleSortDiGui" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.lxd.niukework.Sort.BubbleSortDiGui" />
       <module name="NiuKe" />
       <extension name="coverage">
         <pattern>
@@ -396,12 +369,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SelectSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.lxd.niukework.Sort.SelectSort" />
+    <configuration name="PriorityQueueTopK" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.lxd.niukework.PriorityQueue.PriorityQueueTopK" />
       <module name="NiuKe" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.lxd.niukework.Sort.*" />
+          <option name="PATTERN" value="com.lxd.niukework.PriorityQueue.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.lxd.niukework.MultiState.Test" />
+      <module name="NiuKe" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lxd.niukework.MultiState.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -431,11 +417,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.PriorityQueueTopK" />
         <item itemvalue="Application.BinarySerch" />
-        <item itemvalue="Application.MergeSort" />
-        <item itemvalue="Application.SelectSort" />
-        <item itemvalue="Application.BubbleSortDiGui" />
         <item itemvalue="Application.quickSort" />
+        <item itemvalue="Application.MergeSort" />
       </list>
     </recent_temporary>
   </component>
@@ -482,12 +468,13 @@
       <workItem from="1584317675132" duration="650000" />
       <workItem from="1584415401676" duration="27321000" />
       <workItem from="1585197642039" duration="7535000" />
-      <workItem from="1645929586443" duration="28254000" />
+      <workItem from="1645929586443" duration="28924000" />
+      <workItem from="1646350890527" duration="11998000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="203392000" />
+    <option name="totallyTimeSpent" value="216060000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -499,10 +486,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49689442" visible="true" weight="0.2549168" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49689442" visible="true" weight="0.26626325" />
       <window_info id="Structure" order="1" sideWeight="0.5031056" side_tool="true" weight="0.24357034" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -512,8 +499,8 @@
       <window_info id="Web" order="7" sideWeight="0.5031056" side_tool="true" weight="0.24357034" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.299509" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.7135843" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.18657938" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.049099836" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.119476266" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3295082" />
@@ -526,9 +513,6 @@
       <window_info anchor="bottom" id="Java Enterprise" order="13" />
       <window_info anchor="bottom" id="Database Changes" order="14" />
       <window_info anchor="bottom" id="Version Control" order="15" />
-      <window_info anchor="right" id="RestServices" />
-      <window_info anchor="right" id="Codota" />
-      <window_info anchor="right" id="Word Book" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -539,6 +523,9 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Database" order="9" weight="0.32980332" />
+      <window_info anchor="right" id="Codota" order="10" />
+      <window_info anchor="right" id="Word Book" order="11" side_tool="true" />
+      <window_info anchor="right" id="RestServices" order="12" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49689442" visible="true" weight="0.098335855" />
@@ -587,67 +574,22 @@
           <properties class="java.lang.ArithmeticException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/PriorityQueue/PriorityQueueTopK.java</url>
+          <line>21</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/PriorityQueue/PriorityQueueTopK.java</url>
+          <line>8</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/Thread/prin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/Thread/Demo1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://G:/JAVA1/jdk1.8.0_131/src.zip!/java/lang/Thread.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/Thread/Demo08.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/Thread/alibaba3.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/Thread/alibaba.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#663#664#0" expanded="true" />
-            <element signature="e#705#706#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/Thread/Demo4.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/Thread/MainThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-41">
-          <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/Thread/testThread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
@@ -931,13 +873,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/Sort/quickSort.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="657">
-          <caret line="42" column="47" selection-start-line="42" selection-start-column="47" selection-end-line="42" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/Sort/QuickSortNew.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -945,17 +880,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/Sort/BubbleSortNew.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/Sort/BubbleSort.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="8" column="49" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
+        <state relative-caret-position="250">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/Sort/BubbleSort.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/Sort/BubbleSortNew.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        <state relative-caret-position="200">
+          <caret line="8" column="49" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -975,15 +910,95 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/Sort/MergeSort.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="70" column="33" lean-forward="true" selection-start-line="70" selection-start-column="33" selection-end-line="70" selection-end-column="33" />
+        <state relative-caret-position="1750">
+          <caret line="70" column="33" selection-start-line="70" selection-start-column="33" selection-end-line="70" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/Sort/quickSort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/Sort/BinarySerch.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+        <state relative-caret-position="250">
+          <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://H:/JAVA1/jdk1.8.0_131/src.jar!/java/util/Comparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="108" column="17" selection-start-line="108" selection-start-column="17" selection-end-line="108" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/PriorityQueue/PriorityQueueTopK.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#479#480#0" expanded="true" />
+            <element signature="e#520#521#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/MultiState/Figure.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="23" lean-forward="true" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/MultiState/Rectangle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <folding>
+            <element signature="e#115#116#0" expanded="true" />
+            <element signature="e#144#145#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/MultiState/Triangle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding>
+            <element signature="e#113#114#0" expanded="true" />
+            <element signature="e#142#143#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot/2.1.6.RELEASE/spring-boot-2.1.6.RELEASE.jar!/org/springframework/boot/SpringApplication.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="154" column="27" selection-start-line="154" selection-start-column="27" selection-end-line="154" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/NiukeWorkApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+          <folding>
+            <element signature="e#252#253#0" expanded="true" />
+            <element signature="e#323#324#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lxd/niukework/MultiState/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="62" lean-forward="true" selection-start-line="7" selection-start-column="62" selection-end-line="7" selection-end-column="62" />
         </state>
       </provider>
     </entry>

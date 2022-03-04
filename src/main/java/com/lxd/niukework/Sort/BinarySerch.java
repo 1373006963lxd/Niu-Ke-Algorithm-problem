@@ -5,9 +5,13 @@ import java.util.Arrays;
         注意：二分查找前提条件是：该序列有序*/
 public class BinarySerch {
     public static void main(String[] args) {
-        int []arr={11,22,33,44,55,66,77};
+        //int []arr={11,22,33,44,55,66,77};
+        int [] arr = {1};
+        if(arr.length<1){
+            return;
+        }
         Arrays.sort(arr);//对数组排序
-        System.out.println(binarySerch(arr,55));
+        System.out.println(binarySerch(arr,56));
     }
     public static int binarySerch(int[]arr,int value){
         int min=0;
@@ -21,9 +25,9 @@ public class BinarySerch {
                 min=mid+1;
             }
             mid=(min+max)/2;
-        }
-        if(min>max){
-            return -1;//说明数组为空或所查找元素不存在
+            if(min>max){
+                return -1;//说明数组为空或所查找元素不存在
+            }
         }
         return mid;
     }
