@@ -1,22 +1,16 @@
 package com.lxd.niukework.HashMapKeyObject;
 
-public class RightHash {
-
-
-}
-class People{
+public class People{
     private String name;
     private int age;
 
     public People(){
-
     }
     public People(String name, int age) {
         this.name = name;
         this.age = age;
     }
 
-    @Override
     public boolean equals(Object obj) {
         if (this == obj)return true;
         if(obj == null||getClass()!=obj.getClass()){
@@ -32,7 +26,6 @@ class People{
         return true;
     }
 
-    @Override
     public int hashCode() {
         return name!=null&&age!=0?name.hashCode()+
                 ((Integer)age).hashCode():0;
